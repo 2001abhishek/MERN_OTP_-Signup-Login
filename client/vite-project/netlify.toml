@@ -5,7 +5,7 @@
 
 [build]
   command = "npm run build"
-  publish = "build"
+  publish = "dist"
 
 [build.environment]
   CI = "false"
