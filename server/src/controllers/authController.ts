@@ -55,8 +55,28 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
       from: process.env.GMAIL_USER, // Use email from env
       to: email,
       subject: 'Your OTP for Signup',
-      html: `<p>Your OTP for signup is: <b>${otp}</b></p>`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div style="text-align: center;">
+            <h2 style="color: #4CAF50;">Welcome to Our Platform!</h2>
+            <p style="font-size: 16px; color: #333;">Thank you for signing up. Please use the following One-Time Password (OTP) to complete your signup process.</p>
+          </div>
+    
+          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0;">
+            <p style="font-size: 18px; color: #555; margin: 0;">Your OTP for signup is:</p>
+            <p style="font-size: 24px; font-weight: bold; color: #333; margin: 10px 0;">${otp}</p>
+          </div>
+    
+          <p style="font-size: 14px; color: #666; text-align: center;">This OTP is valid for the next 10 minutes. Please do not share it with anyone.</p>
+    
+          <div style="text-align: center; margin-top: 30px;">
+            <p style="font-size: 16px; color: #777;">If you didn’t request this, please ignore this email.</p>
+            <p style="font-size: 16px; color: #777;">Regards, <br/> The Team</p>
+          </div>
+        </div>
+      `,
     };
+    
 
     transporter.sendMail(mailOptions, (error) => {
       if (error) {
