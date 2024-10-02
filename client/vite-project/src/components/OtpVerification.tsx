@@ -10,7 +10,7 @@ const OtpVerification = () => {
 
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await fetch('https://otp-auth-server-1h62.onrender.com/api/verify-otp', {
+    const response = await fetch('https://mern-otp-signup-login.onrender.com/api/verify-otp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const OtpVerification = () => {
     }
   };
   const handleResendOtp = async () => {
-    const response = await fetch('https://otp-auth-server-1h62.onrender.com/api/resend-otp', {
+    const response = await fetch('https://mern-otp-signup-login.onrender.com/api/resend-otp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

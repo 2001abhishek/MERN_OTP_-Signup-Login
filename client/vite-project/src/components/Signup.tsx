@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await fetch('https://otp-auth-server-1h62.onrender.com/api/signup', {
+    const response = await fetch('https://mern-otp-signup-login.onrender.com/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
